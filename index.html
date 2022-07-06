@@ -28,27 +28,59 @@
   </head>
 
   <body>
-    <h1>그림판</h1>
-    <canvas
+    <h1 class="visually-hidden">그림판</h1>
+    <canvas id="canvas"
       >그림판입니다만, 보이지 않는다면 다른 브라우저를 사용해 보시는 것은
       어떠실까요?</canvas
     >
-    <input type="range" name="" id="" />
-    <div>
-      <button type="button">저장하기</button>
-      <button type="button">지우기</button>
+    <input
+      type="range"
+      name="brush"
+      id="brush"
+      min="1"
+      max="10"
+      value="5"
+      step="0.5"
+    />
+    <div class="control-btns">
+      <button type="button" class="control-btn">저장하기</button>
+      <button type="button" class="control-btn">지우기</button>
     </div>
-    <div>
-      <h2>색상 버튼</h2>
-      <button type="button" aria-label="검정색" class="color-btn"></button>
-      <button type="button" aria-label="빨강색" class="color-btn"></button>
-      <button type="button" aria-label="주황색" class="color-btn"></button>
-      <button type="button" aria-label="노랑색" class="color-btn"></button>
-      <button type="button" aria-label="초록색" class="color-btn"></button>
-      <button type="button" aria-label="파랑색" class="color-btn"></button>
-      <button type="button" aria-label="남색" class="color-btn"></button>
-      <button type="button" aria-label="보라색" class="color-btn"></button>
-      <button type="button" aria-label="하얀색" class="color-btn"></button>
+    <div class="color-btns">
+      <h2 class="visually-hidden">색상 버튼</h2>
+      <button
+        type="button"
+        aria-label="검정색"
+        class="color-btn black"
+      ></button>
+      <button type="button" aria-label="빨강색" class="color-btn red"></button>
+      <button
+        type="button"
+        aria-label="주황색"
+        class="color-btn orange"
+      ></button>
+      <button
+        type="button"
+        aria-label="노랑색"
+        class="color-btn yellow"
+      ></button>
+      <button
+        type="button"
+        aria-label="초록색"
+        class="color-btn green"
+      ></button>
+      <button type="button" aria-label="파랑색" class="color-btn blue"></button>
+      <button type="button" aria-label="남색" class="color-btn navy"></button>
+      <button
+        type="button"
+        aria-label="보라색"
+        class="color-btn purple"
+      ></button>
+      <button
+        type="button"
+        aria-label="하얀색"
+        class="color-btn white"
+      ></button>
     </div>
   </body>
 </html>
