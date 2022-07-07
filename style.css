@@ -35,7 +35,7 @@ body {
   background-color: var(--color-background);
 }
 
-#canvas {
+[id^='canvas-'] {
   margin-bottom: 1rem;
   border-radius: 1rem;
   background-color: var(--color-white);
@@ -104,4 +104,35 @@ body {
 }
 .white {
   background-color: var(--color-white);
+}
+
+@media screen and (max-width: 575px) {
+  .sm-only {
+    display: block !important;
+  }
+
+  .md-only,
+  .lg-only {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  .sm-only,
+  .lg-only {
+    display: none !important;
+  }
+
+  .md-only {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sm-only,
+  .md-only {
+    display: none !important;
+  }
+
+  .lg-only {
+    display: block !important;
+  }
 }
