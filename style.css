@@ -36,8 +36,6 @@ body {
 }
 
 #canvas {
-  width: 80%;
-  height: 50%;
   margin-bottom: 1rem;
   border-radius: 1rem;
   background-color: var(--color-white);
