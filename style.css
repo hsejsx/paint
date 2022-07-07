@@ -49,6 +49,9 @@ body {
 }
 
 .control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 2em;
   padding: 0 1em;
   color: var(--color-white);
