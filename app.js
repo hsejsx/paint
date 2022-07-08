@@ -50,6 +50,8 @@ function setCanvas(size) {
             const x = e.clientX - canvasSize.left;
             const y = e.clientY - canvasSize.top;
             painting(x, y);
+        } else {
+            ctx.beginPath();
         }
     })
     canvas.addEventListener('touchmove', (e) => {
@@ -63,7 +65,9 @@ function setCanvas(size) {
 }
 
 function painting(x, y) {
-    ctx.fillRect(x, y, size, size);
+    // ctx.fillRect(x, y, size, size);
+    ctx.lineTo(x, y);
+    ctx.stroke();
 }
 
 function downloadImg(el) {
@@ -73,6 +77,7 @@ function downloadImg(el) {
 
 brush.addEventListener('change', () => {
     size = brush.value;
+    ctx.lineWidth = size;
 })
 
 colorBtns.addEventListener('click', e => {
@@ -85,7 +90,7 @@ claerBtn.addEventListener('click', () => {
 
 function changeColor(e) {
     const color = window.getComputedStyle(e.target).getPropertyValue('background-color');
-    ctx.fillStyle = color;
+    ctx.strokeStyle = color;
 }
 
 function clearCanvas() {
