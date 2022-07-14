@@ -43,12 +43,13 @@ function setCanvas(size) {
     })
     canvas.addEventListener('touchend', (e) => {
         mode = false;
+        ctx.beginPath();
     })
 
     canvas.addEventListener('mousemove', (e) => {
+        const x = e.clientX - canvasSize.left;
+        const y = e.clientY - canvasSize.top;
         if (mode) {
-            const x = e.clientX - canvasSize.left;
-            const y = e.clientY - canvasSize.top;
             painting(x, y);
         } else {
             ctx.beginPath();
@@ -60,12 +61,13 @@ function setCanvas(size) {
             const x = touch.clientX - canvasSize.left;
             const y = touch.clientY - canvasSize.top;
             painting(x, y);
+        } else {
+            ctx.beginPath();
         }
     })
 }
 
 function painting(x, y) {
-    // ctx.fillRect(x, y, size, size);
     ctx.lineTo(x, y);
     ctx.stroke();
 }
